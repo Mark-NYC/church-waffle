@@ -407,6 +407,13 @@ p { color: var(--cw-text-secondary); }
   text-align: left;
 }
 
+.practice-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 9px;
+}
+
 .practice-num {
   display: inline-flex;
   align-items: center;
@@ -418,7 +425,13 @@ p { color: var(--cw-text-secondary); }
   color: var(--cw-white);
   font-weight: 700;
   font-size: 0.82rem;
-  margin-bottom: 9px;
+  flex-shrink: 0;
+}
+
+.practice-icon {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
 }
 
 .practice-title {
