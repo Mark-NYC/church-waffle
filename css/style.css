@@ -242,64 +242,64 @@ p { color: var(--cw-text-secondary); }
   .hero-copy .subhead { text-align: center; margin: 0 auto; }
 }
 
-/* ---- Waffle circle (above-the-fold visual) ----
-   Same structural pattern as the "Church Circle" tool on obey.tools:
-   a round frame divided into a 4x3 grid by lines that get clipped to
-   the circle via overflow:hidden + border-radius:50%. ---- */
-.waffle-circle-wrap {
+/* ---- Church Waffle circle (above-the-fold visual) ----
+   Ported directly from the "Church Circle" assessment tool on obey.tools
+   (church-assessment.html: .church-circle / .icon-grid / .icon-cell),
+   using the same real icon images and the same edge-hugging nudge
+   transforms, just made fluid instead of fixed-pixel. ---- */
+.church-circle-wrap {
   width: 100%;
   max-width: 320px;
   margin: 0 auto;
 }
-.waffle-circle {
+.church-circle {
   position: relative;
   width: 100%;
   aspect-ratio: 1;
-  border: 3px solid var(--cw-black);
+  border: 4px solid #333;
   border-radius: 50%;
-  background: var(--cw-surface);
+  background-color: #fff;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
-.waffle-icon-grid {
+.icon-grid {
   position: absolute;
   inset: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  padding: 16%;
+  padding: 6.25%;
+  box-sizing: border-box;
 }
-.waffle-icon-cell {
+.icon-cell {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  gap: 3px;
-  padding: 2px;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
-.waffle-icon-cell svg {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  color: var(--cw-black);
+.icon-cell img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
 }
-.waffle-icon-cell span {
-  font-size: 0.52rem;
-  font-weight: 700;
-  line-height: 1.05;
-  color: var(--cw-text);
-}
-.waffle-v-line, .waffle-h-line {
+/* Nudge the outer ring of icons slightly toward the center so they
+   don't crowd the curve of the circle — matches the source tool. */
+.icon-grid > .icon-cell:nth-child(-n+4) img { transform: translateY(6%); }
+.icon-grid > .icon-cell:nth-child(9) img,
+.icon-grid > .icon-cell:nth-child(12) img { transform: translateY(-6%); }
+.icon-grid > .icon-cell:nth-child(5) img { transform: translateX(-6%); }
+.vertical-line, .horizontal-line {
   position: absolute;
-  background: var(--cw-black);
+  background-color: #333;
 }
-.waffle-v-line { width: 2px; top: 0; bottom: 0; }
-.waffle-v-line.left { left: 25%; }
-.waffle-v-line.center { left: 50%; }
-.waffle-v-line.right { left: 75%; }
-.waffle-h-line { height: 2px; left: 0; right: 0; }
-.waffle-h-line.top { top: 33.333%; }
-.waffle-h-line.bottom { top: 66.666%; }
+.vertical-line { width: 3px; top: 0; bottom: 0; }
+.vertical-line.left { left: calc(25% - 1.5px); }
+.vertical-line.center { left: calc(50% - 1.5px); }
+.vertical-line.right { left: calc(75% - 1.5px); }
+.horizontal-line { height: 3px; left: 0; right: 0; }
+.horizontal-line.top { top: calc(33.33% - 1.5px); }
+.horizontal-line.bottom { top: calc(66.66% - 1.5px); }
 .waffle-caption {
   text-align: center;
   font-size: 0.78rem;
