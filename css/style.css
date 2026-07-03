@@ -242,50 +242,74 @@ p { color: var(--cw-text-secondary); }
   .hero-copy .subhead { text-align: center; margin: 0 auto; }
 }
 
-/* ---- Waffle preview (above-the-fold visual) ---- */
-.waffle-preview {
-  background: var(--cw-surface);
-  border: 1px solid var(--cw-border);
-  border-radius: var(--radius-md);
-  padding: 16px;
-  box-shadow: var(--shadow-sm);
+/* ---- Waffle circle (above-the-fold visual) ----
+   Same structural pattern as the "Church Circle" tool on obey.tools:
+   a round frame divided into a 4x3 grid by lines that get clipped to
+   the circle via overflow:hidden + border-radius:50%. ---- */
+.waffle-circle-wrap {
   width: 100%;
-  max-width: 340px;
+  max-width: 320px;
   margin: 0 auto;
 }
-.waffle-grid {
+.waffle-circle {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 3px solid var(--cw-black);
+  border-radius: 50%;
+  background: var(--cw-surface);
+  overflow: hidden;
+}
+.waffle-icon-grid {
+  position: absolute;
+  inset: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
+  grid-template-rows: repeat(3, 1fr);
+  padding: 16%;
 }
-.waffle-cell {
-  aspect-ratio: 1;
-  background: var(--cw-surface-alt);
-  border-radius: 6px;
+.waffle-icon-cell {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 2px;
+  gap: 3px;
   padding: 2px;
 }
-.waffle-cell b {
-  font-size: 0.62rem;
+.waffle-icon-cell svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--cw-black);
+}
+.waffle-icon-cell span {
+  font-size: 0.52rem;
   font-weight: 700;
-  color: var(--cw-accent-dark);
+  line-height: 1.05;
+  color: var(--cw-text);
 }
-.waffle-cell span {
-  font-size: 0.66rem;
-  font-weight: 600;
-  color: var(--cw-text-secondary);
-  line-height: 1.1;
+.waffle-v-line, .waffle-h-line {
+  position: absolute;
+  background: var(--cw-black);
 }
+.waffle-v-line { width: 2px; top: 0; bottom: 0; }
+.waffle-v-line.left { left: 25%; }
+.waffle-v-line.center { left: 50%; }
+.waffle-v-line.right { left: 75%; }
+.waffle-h-line { height: 2px; left: 0; right: 0; }
+.waffle-h-line.top { top: 33.333%; }
+.waffle-h-line.bottom { top: 66.666%; }
 .waffle-caption {
   text-align: center;
   font-size: 0.78rem;
   color: var(--cw-muted);
-  margin-top: 10px;
+  margin-top: 12px;
+}
+
+@media (min-width: 500px) {
+  .waffle-icon-cell svg { width: 24px; height: 24px; }
+  .waffle-icon-cell span { font-size: 0.58rem; }
 }
 
 /* ---- Sections ---- */
