@@ -23,8 +23,8 @@ window.CW_LINKS = {
   translationFr: "https://obey.tools/assets/church-waffle-fr.pdf", // PLACEHOLDER
   translationPt: "https://obey.tools/assets/church-waffle-pt.pdf", // PLACEHOLDER
 
-  // Two Church Model podcast episode.
-  podcast: "https://example.com/podcast/two-church-model", // PLACEHOLDER
+  // Two Church Model podcast episode — real, live episode (not a placeholder).
+  podcast: "https://open.spotify.com/episode/1foZInEJPHG3OgEAeWjVHw?si=4QVypQDESMagNt9XuTcL_w",
 
   // Real, already-live pages on the obey.tools site (not placeholders).
   obeyTools: "https://obey.tools/",
