@@ -8,7 +8,10 @@
  * PLACEHOLDER — replace with the real URL when it's ready.
  */
 window.CW_LINKS = {
-  // Primary CTA — the obey.tools diagnostic tool.
+  // Primary CTA — the obey.tools diagnostic tool. This is the ONE name we
+  // use for the guided digital assessment site-wide ("Church Waffle
+  // Diagnostic") — don't introduce a second name like "Health Assessment
+  // Tool" for the same thing, it just confuses people.
   diagnostic: "https://obey.tools/church-waffle", // PLACEHOLDER
 
   // Downloadable resources.
@@ -19,9 +22,6 @@ window.CW_LINKS = {
   translationEs: "https://obey.tools/assets/church-waffle-es.pdf", // PLACEHOLDER
   translationFr: "https://obey.tools/assets/church-waffle-fr.pdf", // PLACEHOLDER
   translationPt: "https://obey.tools/assets/church-waffle-pt.pdf", // PLACEHOLDER
-
-  // Optional guided digital assessment, if/when it exists as its own tool.
-  healthAssessment: "https://obey.tools/church-waffle-assessment", // PLACEHOLDER
 
   // Two Church Model podcast episode.
   podcast: "https://example.com/podcast/two-church-model", // PLACEHOLDER

@@ -49,11 +49,13 @@ that says `PLACEHOLDER EMBED`.
 Everything in `js/links.js` marked `// PLACEHOLDER` is a stand-in and needs a real URL
 before launch:
 
-- `diagnostic` — the obey.tools diagnostic tool
+- `diagnostic` — the obey.tools diagnostic tool. This is the **only** name we use for
+  the guided digital assessment ("Church Waffle Diagnostic") — resist the urge to add
+  a second name like "Health Assessment Tool" for the same thing, it just confuses
+  people about which link does what.
 - `pdf` — the Church Waffle PDF
 - `quickReference` — the quick reference guide PDF
 - `translationEs`, `translationFr`, `translationPt` — translated PDFs
-- `healthAssessment` — an optional guided digital assessment
 - `podcast` — the Two Church Model episode
 
 `obeyTools`, `commandsOfChrist`, and `threeCircles` are already real, live links to the
