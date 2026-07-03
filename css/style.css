@@ -23,8 +23,8 @@ a { color: inherit; }
   --cw-text: #17171a;
   --cw-text-secondary: #3a3a3c;
   --cw-muted: #8e8e93;
-  --cw-accent: #00b884;
-  --cw-accent-dark: #00966d;
+  --cw-accent: #00D084;
+  --cw-accent-dark: #00D084;
   --cw-accent-light: #e6f9f2;
 
   --radius-sm: 8px;
@@ -293,7 +293,7 @@ p { color: var(--cw-text-secondary); }
   background-color: transparent;
   transition: background-color 0.3s ease;
 }
-.icon-cell.bg-green::before { background-color: #7ed957; }
+.icon-cell.bg-green::before { background-color: #00D084; }
 .icon-cell.bg-yellow::before { background-color: #ffde59; }
 .icon-cell.bg-red::before { background-color: #ff745b; }
 .icon-cell img {
