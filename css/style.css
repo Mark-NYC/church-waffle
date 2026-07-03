@@ -219,7 +219,7 @@ p { color: var(--cw-text-secondary); }
 
 /* ---- Hero ---- */
 .hero {
-  padding: 40px 0 36px;
+  padding: 32px 0 24px;
 }
 .hero .container-narrow { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
 .hero h1 { max-width: 820px; }
@@ -229,11 +229,11 @@ p { color: var(--cw-text-secondary); }
 .hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: 36px;
+  gap: 30px;
   align-items: center;
   text-align: left;
 }
-.hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
 .hero-copy .subhead { text-align: left; margin: 0; }
 
 @media (max-width: 860px) {
@@ -335,8 +335,48 @@ p { color: var(--cw-text-secondary); }
 /* ---- Sections ---- */
 .section { padding: 48px 0; }
 .section-alt { background: var(--cw-surface-alt); }
+.section-tight { padding: 34px 0; }
 .section-header { max-width: var(--container-narrow); margin: 0 auto 24px; text-align: center; }
 .section-header.align-left { margin: 0 0 20px; text-align: left; }
+
+/* ---- Compact strip ("Use it in 15 minutes") attached under the hero ---- */
+.strip { padding: 18px 0 30px; border-top: 1px solid var(--cw-border); }
+.strip-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 28px;
+}
+.strip-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--cw-muted);
+  white-space: nowrap;
+}
+.strip-steps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 22px;
+  list-style: none;
+  flex: 1;
+}
+.strip-steps li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--cw-text);
+}
+.strip-steps .step-num { width: 22px; height: 22px; font-size: 0.7rem; }
+
+@media (max-width: 600px) {
+  .strip-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .strip-steps { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
 
 .section-cta {
   text-align: center;
@@ -397,6 +437,31 @@ p { color: var(--cw-text-secondary); }
   color: var(--cw-text-secondary);
 }
 
+/* Compact "who it's for" tag row, folded into the "What Is" section */
+.audience-row {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--cw-border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+}
+.audience-row-label {
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--cw-muted);
+  white-space: nowrap;
+}
+.audience-tags-sm {
+  flex: 1;
+  max-width: none;
+  margin: 0;
+}
+.audience-tags-sm .audience-tag { padding: 6px 13px; font-size: 0.82rem; }
+
 /* ---- Practice grid (12 practices, detailed) ---- */
 .practice-grid {
   display: grid;
@@ -447,6 +512,16 @@ p { color: var(--cw-text-secondary); }
   .practice-card { padding: 13px 11px; }
 }
 
+/* Diagnostic CTA attached to the bottom of the practices grid */
+.practices-cta {
+  max-width: var(--container-narrow);
+  margin: 34px auto 0;
+  padding-top: 28px;
+  border-top: 1px solid var(--cw-border);
+  text-align: center;
+}
+.practices-cta h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); margin-bottom: 8px; }
+
 /* ---- Generic card grid (tools / resources) ---- */
 .card-grid {
   display: grid;
@@ -475,6 +550,35 @@ p { color: var(--cw-text-secondary); }
 .card h3 { margin-bottom: 1px; }
 .card p { font-size: 0.94rem; flex-grow: 1; }
 .card .btn { margin-top: 6px; align-self: flex-start; }
+
+/* Small recommendation card ("Go Deeper With the Two Church Model") */
+.recommend-card {
+  margin-top: 24px;
+  background: var(--cw-surface);
+  border: 1px solid var(--cw-border);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.recommend-card-label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--cw-accent-dark);
+  margin-bottom: 4px;
+}
+.recommend-card h3 { font-size: 1.05rem; margin-bottom: 4px; }
+.recommend-card p { font-size: 0.9rem; margin: 0; }
+.recommend-card .btn { flex-shrink: 0; }
+@media (max-width: 700px) {
+  .recommend-card { flex-direction: column; align-items: flex-start; }
+}
 
 .card-lang {
   display: inline-block;
@@ -621,6 +725,7 @@ p { color: var(--cw-text-secondary); }
 /* ---- Utility ---- */
 .text-center { text-align: center; }
 .mt-24 { margin-top: 24px; }
+.mt-16 { margin-top: 16px; }
 .visually-hidden {
   position: absolute;
   width: 1px; height: 1px;
