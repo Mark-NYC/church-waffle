@@ -273,13 +273,31 @@ p { color: var(--cw-text-secondary); }
   box-sizing: border-box;
 }
 .icon-cell {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
 }
+/* Health-status circle behind each icon — same mechanic and colors as
+   the "Church Circle" tool on obey.tools (bg-green/bg-yellow/bg-red).
+   Transparent by default; js/main.js adds one of these classes as it
+   fills in the circle, then clears them all and starts over. */
+.icon-cell::before {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+.icon-cell.bg-green::before { background-color: #7ed957; }
+.icon-cell.bg-yellow::before { background-color: #ffde59; }
+.icon-cell.bg-red::before { background-color: #ff745b; }
 .icon-cell img {
+  position: relative;
   width: 70%;
   height: 70%;
   object-fit: contain;
@@ -301,34 +319,6 @@ p { color: var(--cw-text-secondary); }
 .horizontal-line { height: 3px; left: 0; right: 0; }
 .horizontal-line.top { top: calc(33.33% - 1.5px); }
 .horizontal-line.bottom { top: calc(66.66% - 1.5px); }
-
-/* Rotating label pill — cycles over each icon, 1 second at a time.
-   Lives outside .church-circle (which clips to a circle) so the pill
-   can never get cut off near the edge cells. Position/text are set by
-   js/main.js; this just handles the look and the cross-fade. */
-.waffle-tooltip {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--cw-accent);
-  color: var(--cw-white);
-  font-weight: 700;
-  font-size: 0.62rem;
-  white-space: nowrap;
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-  opacity: 0;
-  transition: opacity 0.2s ease, left 0.2s ease, top 0.2s ease;
-  pointer-events: none;
-  z-index: 5;
-}
-.waffle-tooltip.visible { opacity: 1; }
-
-@media (min-width: 500px) {
-  .waffle-tooltip { font-size: 0.72rem; padding: 5px 13px; }
-}
 
 .waffle-caption {
   text-align: center;

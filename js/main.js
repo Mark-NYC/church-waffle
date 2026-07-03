@@ -26,34 +26,31 @@ document.addEventListener('DOMContentLoaded', function () {
   var yearEl = document.getElementById('cw-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Rotating green label pill over the Church Waffle circle — cycles
-  // through all 12 practices, 1 second each, then loops. Order matches
-  // the .icon-grid cells in index.html (4 columns x 3 rows).
-  var waffleTooltip = document.getElementById('waffle-tooltip');
-  if (waffleTooltip) {
-    var practices = [
-      'Believe the Gospel', 'Repent', 'Be Baptized', 'Receive the Spirit',
-      'Word', 'Love', "Lord's Supper", 'Pray',
-      'Signs and Wonders', 'Give', 'Worship', 'Make Disciples'
-    ];
-    var current = 0;
+  // Church Waffle circle animation — fills the icons in one at a time
+  // with a random health-status color (same green/yellow/red as the
+  // obey.tools Church Circle tool), then clears and starts over.
+  var waffleCells = document.querySelectorAll('.icon-grid .icon-cell');
+  if (waffleCells.length) {
+    var fillColors = ['bg-green', 'bg-yellow', 'bg-red'];
+    var fillIndex = 0;
 
-    function showWafflePractice(index) {
-      var row = Math.floor(index / 4);
-      var col = index % 4;
-      waffleTooltip.classList.remove('visible');
-      setTimeout(function () {
-        waffleTooltip.textContent = practices[index];
-        waffleTooltip.style.left = ((col + 0.5) / 4 * 100) + '%';
-        waffleTooltip.style.top = ((row + 0.5) / 3 * 100) + '%';
-        waffleTooltip.classList.add('visible');
-      }, 150);
+    function waffleStep() {
+      if (fillIndex < waffleCells.length) {
+        var color = fillColors[Math.floor(Math.random() * fillColors.length)];
+        waffleCells[fillIndex].classList.add(color);
+        fillIndex++;
+        setTimeout(waffleStep, 1000);
+      } else {
+        setTimeout(function () {
+          waffleCells.forEach(function (cell) {
+            cell.classList.remove('bg-green', 'bg-yellow', 'bg-red');
+          });
+          fillIndex = 0;
+          setTimeout(waffleStep, 1000);
+        }, 1500);
+      }
     }
 
-    showWafflePractice(current);
-    setInterval(function () {
-      current = (current + 1) % practices.length;
-      showWafflePractice(current);
-    }, 1000);
+    waffleStep();
   }
 });
