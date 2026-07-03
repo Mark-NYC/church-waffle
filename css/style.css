@@ -288,7 +288,7 @@ p { color: var(--cw-text-secondary); }
   content: '';
   position: absolute;
   width: 70%;
-  height: 70%;
+  aspect-ratio: 1;
   border-radius: 50%;
   background-color: transparent;
   transition: background-color 0.3s ease;
@@ -299,7 +299,7 @@ p { color: var(--cw-text-secondary); }
 .icon-cell img {
   position: relative;
   width: 70%;
-  height: 70%;
+  aspect-ratio: 1;
   object-fit: contain;
 }
 /* Nudge the outer ring of icons slightly toward the center so they
