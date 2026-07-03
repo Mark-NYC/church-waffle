@@ -339,45 +339,6 @@ p { color: var(--cw-text-secondary); }
 .section-header { max-width: var(--container-narrow); margin: 0 auto 24px; text-align: center; }
 .section-header.align-left { margin: 0 0 20px; text-align: left; }
 
-/* ---- Compact strip ("Use it in 15 minutes") attached under the hero ---- */
-.strip { padding: 18px 0 30px; border-top: 1px solid var(--cw-border); }
-.strip-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px 28px;
-}
-.strip-label {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  color: var(--cw-muted);
-  white-space: nowrap;
-}
-.strip-steps {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 22px;
-  list-style: none;
-  flex: 1;
-}
-.strip-steps li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.9rem;
-  color: var(--cw-text);
-}
-.strip-steps .step-num { width: 22px; height: 22px; font-size: 0.7rem; }
-
-@media (max-width: 600px) {
-  .strip-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .strip-steps { flex-direction: column; align-items: flex-start; gap: 10px; }
-}
-
 .section-cta {
   text-align: center;
   padding: 54px 0;
@@ -386,38 +347,6 @@ p { color: var(--cw-text-secondary); }
 }
 .section-cta h2 { color: var(--cw-white); }
 .section-cta .btn-secondary { background: var(--cw-white); color: var(--cw-black); border-color: var(--cw-white); }
-
-/* ---- Steps ("Use it in 15 minutes") ---- */
-.steps {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  max-width: var(--container-narrow);
-  margin: 0 auto;
-}
-.step {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 14px 16px;
-  background: var(--cw-surface);
-  border: 1px solid var(--cw-border);
-  border-radius: var(--radius-md);
-}
-.step-num {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--cw-black);
-  color: var(--cw-white);
-  font-weight: 700;
-  font-size: 0.85rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.step p { margin: 0; font-size: 0.98rem; color: var(--cw-text); padding-top: 3px; }
 
 /* ---- Audience tags ("Who this is for") ---- */
 .audience-tags {
