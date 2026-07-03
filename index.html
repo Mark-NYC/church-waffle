@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
-<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/style.css?v=7">
 </head>
 <body>
 
@@ -88,16 +88,14 @@
   </section>
 
   <!-- Use it in 15 minutes -->
-  <section class="section section-alt">
-    <div class="container-narrow">
-      <div class="section-header align-left">
-        <h2>Use It in 15 Minutes</h2>
-      </div>
-      <div class="steps">
-        <div class="step"><span class="step-num">1</span><p>Read the 12 practices.</p></div>
-        <div class="step"><span class="step-num">2</span><p>Mark what your group actually practices.</p></div>
-        <div class="step"><span class="step-num">3</span><p>Pick one missing practice to obey this week.</p></div>
-      </div>
+  <section class="strip">
+    <div class="container-narrow strip-inner">
+      <span class="strip-label">Use It in 15 Minutes</span>
+      <ol class="strip-steps">
+        <li><span class="step-num">1</span>Read the 12 practices</li>
+        <li><span class="step-num">2</span>Mark what your group actually practices</li>
+        <li><span class="step-num">3</span>Pick one to obey this week</li>
+      </ol>
     </div>
   </section>
 
@@ -109,41 +107,34 @@
       </div>
       <p>The Church Waffle is a simple grid of 12 practices taken directly from Acts 2:36-47 — how the first church, right after Pentecost, actually lived. Instead of guessing whether your group is "healthy," you look at each practice one at a time and ask a straight question: are we actually doing this, or just talking about it?</p>
       <p style="margin-top:12px;">It works for house churches, small groups, and traditional congregations. You don't need special training to use it — just a willingness to look honestly at what's happening in your group.</p>
+      <div class="audience-row">
+        <span class="audience-row-label">Who it's for</span>
+        <div class="audience-tags audience-tags-sm">
+          <span class="audience-tag">House churches</span>
+          <span class="audience-tag">Small groups</span>
+          <span class="audience-tag">Legacy church teams</span>
+          <span class="audience-tag">Church planters</span>
+          <span class="audience-tag">Disciple-making teams</span>
+          <span class="audience-tag">Simple church networks</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- The problem it solves -->
-  <section class="section section-alt">
+  <section class="section section-alt section-tight">
     <div class="container-narrow">
       <div class="section-header align-left">
         <h2>Attendance Isn't the Same as Health</h2>
       </div>
       <p>Most groups that call themselves a church can tell you how many people showed up last Sunday. Few can tell you whether they're actually practicing what Jesus commanded.</p>
-      <p style="margin-top:12px;">Good teaching and a strong turnout don't tell you if a group is baptizing new believers, praying together, giving generously, or making disciples who make more disciples.</p>
-      <p style="margin-top:12px;">The Church Waffle gives you a simple, visual way to ask the real question: are we practicing the commands of Jesus together — not just meeting together?</p>
+      <p style="margin-top:8px;">Good teaching and a strong turnout don't tell you if a group is baptizing new believers, praying together, giving generously, or making disciples who make more disciples.</p>
+      <p style="margin-top:8px;">The Church Waffle gives you a simple, visual way to ask the real question: are we practicing the commands of Jesus together — not just meeting together?</p>
     </div>
   </section>
 
-  <!-- Who this is for -->
+  <!-- The 12 practices + diagnostic CTA -->
   <section class="section">
-    <div class="container-narrow">
-      <div class="section-header align-left">
-        <h2>Who This Is For</h2>
-        <p>Any group trying to be the church, at any size or stage.</p>
-      </div>
-      <div class="audience-tags">
-        <span class="audience-tag">House churches</span>
-        <span class="audience-tag">Small groups</span>
-        <span class="audience-tag">Legacy church teams</span>
-        <span class="audience-tag">Church planters</span>
-        <span class="audience-tag">Disciple-making teams</span>
-        <span class="audience-tag">Simple church networks</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- The 12 practices -->
-  <section class="section section-alt">
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">The Practices</span>
@@ -164,16 +155,12 @@
         <div class="practice-card"><span class="practice-num">11</span><div class="practice-title">Worship</div><div class="practice-ref">Acts 2:46-47</div></div>
         <div class="practice-card"><span class="practice-num">12</span><div class="practice-title">Make Disciples</div><div class="practice-ref">Acts 2:47</div></div>
       </div>
-    </div>
-  </section>
-
-  <!-- Take the diagnostic -->
-  <section class="section">
-    <div class="container-narrow text-center">
-      <h2>See Where You Stand</h2>
-      <p>Not sure where your church is strong or weak? Take the 3-minute Church Waffle Diagnostic and identify the missing practices in your group.</p>
-      <div class="mt-24">
-        <a href="#" data-link="diagnostic" class="btn btn-primary">Start Your Diagnostic</a>
+      <div class="practices-cta">
+        <h3>See Where You Stand</h3>
+        <p>Not sure where your church is strong or weak? Take the 3-minute Church Waffle Diagnostic and identify the missing practices in your group.</p>
+        <div class="mt-16">
+          <a href="#" data-link="diagnostic" class="btn btn-primary">Start Your Diagnostic</a>
+        </div>
       </div>
     </div>
   </section>
@@ -204,17 +191,14 @@
         </div>
       </div>
       <p style="margin-top:18px; font-size:0.9rem;">Need it in another language? <a href="resources.html#translations" style="color:var(--cw-accent-dark); font-weight:600;">See translated resources</a>.</p>
-    </div>
-  </section>
 
-  <!-- Two Church Model -->
-  <section class="section">
-    <div class="container-narrow text-center">
-      <span class="eyebrow">Go Deeper</span>
-      <h2>Go Deeper With the Two Church Model</h2>
-      <p>The Church Waffle helps you see what your church is practicing. The Two Church Model helps you think about the structure that allows those practices to multiply.</p>
-      <div class="mt-24">
-        <a href="two-church-model.html" class="btn btn-primary">Hear the Full Episode</a>
+      <div class="recommend-card">
+        <div class="recommend-card-copy">
+          <span class="recommend-card-label">Go Deeper</span>
+          <h3>Go Deeper With the Two Church Model</h3>
+          <p>The Church Waffle helps you see what your church is practicing. The Two Church Model helps you think about the structure that allows those practices to multiply.</p>
+        </div>
+        <a href="two-church-model.html" class="btn btn-secondary">Hear the Full Episode</a>
       </div>
     </div>
   </section>
