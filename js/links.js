@@ -30,5 +30,9 @@ window.CW_LINKS = {
   obeyTools: "https://obey.tools/",
   commandsOfChrist: "https://obey.tools/commands-of-christ.html",
   threeCircles: "https://obey.tools/3-circles.html",
-  churchAssessmentTool: "https://obey.tools/church-assessment.html"
+  churchAssessmentTool: "https://obey.tools/church-assessment.html",
+
+  // Real, already-live sibling sites in the same disciple-making family.
+  covoMultipliers: "https://covomultipliers.com",
+  conversationQuadrant: "https://conversationquadrant.com"
 };
